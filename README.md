@@ -1,5 +1,1 @@
-Halla balla
-hallo verden
-Hei petter
-
-jacob kan ikke code for shit.
+Dette er min branch 
