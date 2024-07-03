@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('navbar.html')
+    // Fetch navbar.html and insert it into the navbar div, with regards to undercatalogs
+    let path = window.location.pathname.split('/').length > 2 ? '../navbar.html' : 'navbar.html';
+    fetch(path)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
