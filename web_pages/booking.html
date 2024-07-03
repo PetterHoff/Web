@@ -5,9 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../booking_page/calendarStyle.css">
 </head>
 <body>
     <div id="navbar"></div>
     <script src="../scripts.js"></script>
+    <h1>Booking</h1>
+    <p>Her kan du booke en tid hvor du ønsker å besøke oss.</p>
+
+    <div id="calendarContainer">
+        <div>
+            <div class="calendarHeader">
+                <div id="month"></div>
+                <button class="prev" onclick="prevMonth()">&#8249;</button>
+                <span id="month-year"></span>
+                <button class="next" onclick="nextMonth()">&#8250;</button> 
+            </div>
+            <div>
+                <div class="daysOfWeek">
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                    <div>Sun</div>
+                </div>
+                <div class="calendar-days" id="calendarDays">
+                    
+                </div>
+
+        </div>
+        
+    </div>
+    <script src="../booking_page/calendar_script.js"></script>
 </body>
 </html>
