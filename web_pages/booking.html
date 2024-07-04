@@ -6,6 +6,14 @@
     <title>Booking</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../booking_page/calendarStyle.css">
+
+    <!-- Include React and ReactDOM from CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    
+    <!-- Babel for JSX transformation (if needed) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
 </head>
 <body>
     <div id="navbar"></div>
@@ -13,31 +21,10 @@
     <h1>Booking</h1>
     <p>Her kan du booke en tid hvor du ønsker å besøke oss.</p>
 
-    <div id="calendarContainer">
-        <div>
-            <div class="calendarHeader">
-                <div id="month"></div>
-                <button class="prev" onclick="prevMonth()">&#8249;</button>
-                <span id="month-year"></span>
-                <button class="next" onclick="nextMonth()">&#8250;</button> 
-            </div>
-            <div>
-                <div class="daysOfWeek">
-                    <div>Mon</div>
-                    <div>Tue</div>
-                    <div>Wed</div>
-                    <div>Thu</div>
-                    <div>Fri</div>
-                    <div>Sat</div>
-                    <div>Sun</div>
-                </div>
-                <div class="calendar-days" id="calendarDays">
-                    
-                </div>
-
-        </div>
+    <div id="react-calendar">
         
     </div>
-    <script src="../booking_page/calendar_script.js"></script>
+     <!-- Script to initalise calendar component -->
+    <script type="text/babel" src="../booking_page/calendarScript.jsx"></script>
 </body>
 </html>
