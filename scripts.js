@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Fetch navbar.html and insert it into the navbar div, with regards to undercatalogs
+    // Fetch navbar.html and insert it into the navbar div, with regards to subdirectories
     let path = window.location.pathname.split('/').length > 2 ? '../navbar.html' : 'navbar.html';
     fetch(path)
         .then(response => {
