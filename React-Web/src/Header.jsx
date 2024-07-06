@@ -6,10 +6,10 @@ function Header(){
             <h1>My website</h1>
             <nav>
                 <ul>
-                    <li><a href="/web_pages/beskrivelse.html">Beskrivelse</a></li>
+                    <li><a href="/">Beskrivelse</a></li>
                     <li><a href="/web_pages/booking.html">Booking</a></li>
                     <li><a href="/web_pages/kontakt.html">Kontakt Informasjon</a></li>
-                    <li><a href="/web_pages/aktiviteter.html">Aktiviteter</a></li>
+                    <li><a href="/web_pages/aktiviteter.html">Hjem</a></li>
                 </ul>
             </nav>
         </header>
