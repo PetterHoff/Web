@@ -6,16 +6,10 @@ body {
 
 nav { /*navbar styling */
     background-color: #f3c9a9;
-    display: flex;
     align-items: center;
     padding: 10px 0;
 }
 
-.logo {  /* Hus iconet i navbar */
-    width: 50px;
-    height: auto;
-
-}
 
 nav ul {
     list-style: none;
