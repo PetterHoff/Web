@@ -1,9 +1,11 @@
-function Footer(){
-    return (
-        <footer>
-            <p>&copy; Villa spania</p>
-        </footer>
-    );
+
+
+function Footer() {
+  return (
+    <footer>
+      <p>&copy; Villa spania</p>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
