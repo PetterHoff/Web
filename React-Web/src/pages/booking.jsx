@@ -1,4 +1,4 @@
-import Calendar from "../components/calendarScript.jsx";
+import Calendar from "../components/Calendar/calendarScript";
 
 const Booking = () => {
   return (
