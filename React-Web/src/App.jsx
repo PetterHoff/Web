@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import Beskrivelse from "./pages/beskrivelse.jsx";
@@ -7,7 +7,6 @@ import Booking from "./pages/booking.jsx";
 import Kontakt from "./pages/kontakt.jsx";
 import Hjem from "./pages/hjem.jsx";
 import Login from "./pages/login.jsx";
-
 
 function App() {
   return (

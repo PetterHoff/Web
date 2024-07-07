@@ -1,12 +1,15 @@
-
+import Signup from "../components/auth/SignUp";
+import SignIn from "../components/auth/SignIn";
 
 const Login = () => {
     return (
-    <div>
-        <h1>Login</h1>
-        </div>
+        <>
+            <div>
+                <SignIn />
+                <Signup />
+            </div>
+        </>
     );
-  };
-  
-  export default Login;
-  
+};
+
+export default Login;

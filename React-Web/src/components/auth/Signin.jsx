@@ -1,24 +1,42 @@
-
-import "./LoginSignup.css"
-
-import user_icon from "../Assets/person.png"
-import email_icon from "../Assets/email.png"
-import password_icon from "../Assets/password.png"
-
+import { signInWithEmailAndPassword } from "firebase/auth";
+import React, { useState } from "react";
+import { auth } from "../../firebase";
 
 const SignIn = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    return (
-        <div className="sign-in-container">
-            <form>
-                <h1>Log in</h1>
-                <input type="email" placeholder="enter your email" value={email}></input>
-                <input type="password" placeholder="enter your password"> value ={password}</input>
-            </form>
-        </div>
-    )
-}
+  const signIn = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-export default LoginSignup
+  return (
+    <div className="sign-in-container">
+      <form onSubmit={signIn}>
+        <h1>Log In to your Account</h1>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        ></input>
+        <input
+          type="password"
+          placeholder="Enter your password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        ></input>
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+  );
+};
+
+export default SignIn;
