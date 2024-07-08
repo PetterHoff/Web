@@ -11,7 +11,6 @@ function Header() {
           <li><Link to="/beskrivelse">Beskrivelse</Link></li>
           <li><Link to="/booking">Booking</Link></li>
           <li><Link to="/kontakt">Kontakt oss</Link></li>
-          <li><Link to="/login">Login</Link></li>
         </ul>
       </nav>
     </header>

@@ -1,10 +1,9 @@
-import Calendar from "../components/Calendar/calendarScript";
+import Calendar from "../components/Calendar/calendar_new.jsx";
 
 const Booking = () => {
   return (
     <div>
       <h1>Booking</h1>
-      <p>Book your appointments here</p>
       <Calendar />
     </div>
   );
