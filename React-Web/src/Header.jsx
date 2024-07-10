@@ -7,10 +7,10 @@ function Header() {
     <header>
       <nav>
         <ul>
-          <li><Link to="/">Hjem</Link></li>
-          <li><Link to="/beskrivelse">Beskrivelse</Link></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/beskrivelse">Description</Link></li>
           <li><Link to="/booking">Booking</Link></li>
-          <li><Link to="/kontakt">Kontakt oss</Link></li>
+          <li><Link to="/kontakt">Contact us</Link></li>
         </ul>
       </nav>
     </header>

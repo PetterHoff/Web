@@ -2,7 +2,7 @@
 const Beskrivelse = () => {
   return (
     <div>
-      <h1>Beskrivelse</h1>
+      <h1>Description</h1>
     </div>
   );
 };

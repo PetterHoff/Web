@@ -4,6 +4,7 @@ const Booking = () => {
   return (
     <div>
       <h1>Booking</h1>
+      <h3>Customer information</h3>
       <Calendar />
     </div>
   );
