@@ -51,3 +51,9 @@
 
 
 }
+
+.num-people-options {
+  display: flex;
+  align-items: center;
+}
+

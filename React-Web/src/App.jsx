@@ -6,6 +6,7 @@ import Beskrivelse from "./pages/beskrivelse.jsx";
 import Booking from "./pages/booking.jsx";
 import Kontakt from "./pages/kontakt.jsx";
 import Hjem from "./pages/hjem.jsx";
+import Success from "../src/components/Calendar/Sucsess.jsx";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/description" element={<Beskrivelse />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/contact" element={<Kontakt />} />
+          <Route path="/success" element={<Success />} />
         </Routes>
       </div>
       <Footer />
