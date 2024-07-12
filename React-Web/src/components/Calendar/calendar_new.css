@@ -1,59 +1,93 @@
-.booking-container {
-  display: flex;
-  justify-content: flex-start; /* Aligns items to the start of the container */
-  padding: 20px;
-}
+  .booking-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the start of the container */
+    padding: 20px;
+  }
 
-.booking-form {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 10px;
-  flex: 1;
-  margin-right: 20px;
-}
+  .booking-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    flex: 1;
+    margin-right: 20px;
+  }
 
-.booking-form label {
-  display: flex;
-  align-items: center;
-  padding-right: 10px;
-}
+  .booking-form label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start ; /* Align labels to the right */
 
-.booking-form input,
-.booking-form textarea {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-}
+    padding-right: 5px;
 
-.booking-form input[type="text"],
-.booking-form input[type="email"],
-.booking-form input[type="tel"],
-.booking-form input[type="text"] {
-  grid-column: span 1;
-}
+  }
 
-.booking-form textarea {
-  grid-column: span 2;
-}
+  .booking-form input,
+  .booking-form textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
 
-.booking-form button {
-  grid-column: span 2;
-  padding: 10px;
-  background-color: #f3c9a9;
-  color: white;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-}
+  .booking-form input[type="text"],
+  .booking-form input[type="email"],
+  .booking-form input[type="tel"],
+  .booking-form input[type="text"] {
+    grid-column: span 1;
+  }
 
-.calendar-wrapper {
-  flex: 2;
+  .booking-form textarea {
+    grid-column: span 2;
+  }
 
+  .booking-form button {
+    grid-column: span 2;
+    padding: 10px;
+    background-color: #f3c9a9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
 
-}
+  .calendar-wrapper {
+    flex: 2;
+  }
+  
+  .num-people-options{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align labels to the right */
 
-.num-people-options {
-  display: flex;
-  align-items: center;
-}
+    padding-right: 5px;
+  }
 
+  .total-cost {
+    grid-column: span 2; /* Make the total-cost section span across both columns */ 
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .cost-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+  
+  .cost-item.total {
+    font-weight: bold;
+    font-size: 1.2em;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  
+  .cost-item .label {
+    color: #555;
+  }
+  
+  .cost-item .value {
+    color: #000;
+  }
