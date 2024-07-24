@@ -38,7 +38,12 @@
 }
 
 .calendar-wrapper {
-  width: 48%; /* Reduce width to fit form and calendar properly */
+ /* Reduce width to fit form and calendar properly */
+  position: absolute;
+  right: 0px;
+
+  border: 3px solid #73AD21;
+  padding: 10px;
 }
 
 .num-people-options {

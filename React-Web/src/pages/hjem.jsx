@@ -6,8 +6,6 @@ import "./hjem_style.css" //styling
 import balcony_sun from "../components/Assets/home1.jpg"
 
 
-
-
 const Hjem = () => {
   return (
     <div>
