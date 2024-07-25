@@ -46,7 +46,9 @@ const BookingForm = () => {
       number_of_visitors: numPeople,
       comments: event.target.comments.value,
       startDate: state[0].startDate.toLocaleDateString(),
-      endDate: state[0].endDate.toLocaleDateString()
+      endDate: state[0].endDate.toLocaleDateString(),
+      Amount: totalCost,
+      totalCost: totalCost+10000
     };
 
     if (days < 3) {
