@@ -1,43 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { DateRangePicker } from 'react-date-range';
-import { addYears, differenceInDays } from 'date-fns';
+import { DateRangePicker } from "@nextui-org/date-picker";
 import emailjs from 'emailjs-com';
-import 'react-date-range/dist/styles.css';
-import 'react-date-range/dist/theme/default.css';
-import './calendar_new.css'; // Import the CSS file for styling
-import 'react-phone-number-input/style.css'; // phone number styling
-import PhoneInput from 'react-phone-number-input'; // phone input 
-import { useNavigate } from 'react-router-dom'; 
-import "nice-forms.css"
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
+import { useNavigate } from 'react-router-dom';
+import './calendar_new.css';
+import "nice-forms.css";
 
 const BookingForm = () => {
-  const [state, setState] = useState([
-    {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: 'selection'
-    }
-  ]);
-  // variables for scope inside function booking form, basically global
+  const [dateRange, setDateRange] = useState({ startDate: new Date(), endDate: new Date() });
   const [phoneValue, setPhoneValue] = useState('');
-  const [totalCost, setTotalCost] = useState(1000); // Initialize with one day's cost (1000kr)
-  const navigate = useNavigate(); 
-  const days = differenceInDays(state[0].endDate, state[0].startDate) + 1;
-  const [numPeople, setNumPeople] = useState(3); // Initial number of people
-  
+  const [totalCost, setTotalCost] = useState(1000);
+  const navigate = useNavigate();
+  const days = Math.max(1, (dateRange.endDate - dateRange.startDate) / (1000 * 60 * 60 * 24) + 1);
+  const [numPeople, setNumPeople] = useState(3);
+
   useEffect(() => {
     let rate = numPeople <= 3 ? 1000 : 1250;
     let cost = days * rate + 1900;
     setTotalCost(cost);
-  }, [state, numPeople]); // Recalculate when dates or numPeople change
+  }, [dateRange, numPeople]);
 
   const handleNumPeopleChange = (event) => {
     setNumPeople(Number(event.target.value));
   };
 
-  const handleSubmit = (event) => { // when button is clicked, we gather value from the forms, then send to an email which i have configured
+  const handleSubmit = (event) => {
     event.preventDefault();
-    const formData = { // object
+    const formData = {
       firstName: event.target.fname.value,
       lastName: event.target.lname.value,
       country: event.target.country.value,
@@ -45,22 +35,21 @@ const BookingForm = () => {
       phone: phoneValue,
       number_of_visitors: numPeople,
       comments: event.target.comments.value,
-      startDate: state[0].startDate.toLocaleDateString(),
-      endDate: state[0].endDate.toLocaleDateString(),
+      startDate: dateRange.startDate.toLocaleDateString(),
+      endDate: dateRange.endDate.toLocaleDateString(),
       Amount: totalCost,
-      totalCost: totalCost+10000
+      totalCost: totalCost + 10000,
     };
 
     if (days < 3) {
       alert('The minimum booking duration is 3 days. Please select a longer stay.');
-      return; // Prevent form submission
+      return;
     }
 
-    // Send email with form data
     emailjs.send('service_i0sm1gm', 'template_b56ucfo', formData, 'BE88S6rY2LNNpFGj6')
       .then((result) => {
         console.log('Email successfully sent!', result.text);
-        navigate('/success'); // Redirect to success page using navigate
+        navigate('/success');
       }, (error) => {
         console.error('Error sending email:', error.text);
         alert('Error sending email. Please try again.');
@@ -69,6 +58,12 @@ const BookingForm = () => {
 
   return (
     <div className="booking-container">
+      <DateRangePicker
+        label="Stay duration" 
+        isRequired
+        value={dateRange}
+        onChange={setDateRange}
+      />
       <form onSubmit={handleSubmit} className="booking-form">
         <div className="nice-form-group">
           <label htmlFor="fname">First Name:</label>
@@ -81,7 +76,7 @@ const BookingForm = () => {
           <input type="email" id="email" name="email" placeholder="Email" required />
 
           <label htmlFor="phone">Phone Number:</label>
-          <PhoneInput placeholder="Enter phone number" value={phoneValue} onChange={setPhoneValue} required />
+          <PhoneInput className='phone-input' placeholder="Enter phone number" value={phoneValue} onChange={setPhoneValue} required />
 
           <label htmlFor="country">Country:</label>
           <input type="text" id="country" name="country" placeholder="Country" required />
@@ -133,23 +128,6 @@ const BookingForm = () => {
 
         <button type="submit">Book Now</button>
       </form>
-
-      <div className="calendar-wrapper">
-        <DateRangePicker
-          ranges={state}
-          onChange={item => setState([item.selection])}
-          showSelectionPreview={true}
-          moveRangeOnFirstSelection={false}
-          months={2}
-          direction="horizontal"
-          preventSnapRefocus={true}
-          calendarFocus="forwards"
-          minDate={new Date()}
-          maxDate={addYears(new Date(), 1)}
-          staticRanges={[]}
-          inputRanges={[]}
-        />
-      </div>
     </div>
   );
 };

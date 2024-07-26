@@ -1,29 +1,32 @@
 .booking-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
-  justify-content: space-between; /* Adjusts spacing between elements */
 }
 
 .booking-form {
   display: flex;
   flex-direction: column;
-  width: 48%; /* Reduce width to fit calendar closer */
-  margin-right: 2%; /* Small margin to create space between form and calendar */
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
 }
 
 .booking-form label {
   display: block;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .booking-form input,
-.booking-form textarea {
+.booking-form textarea,
+.phone-input {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
   box-sizing: border-box;
 }
-
 
 .booking-form textarea {
   resize: vertical;
@@ -36,13 +39,6 @@
   border: none;
   cursor: pointer;
   text-align: center;
-}
-
-.calendar-wrapper {
- /* Reduce width to fit form and calendar properly */
-  position: absolute;
-  right: 0px;
-  padding: 10px;
 }
 
 .num-people-options {
@@ -77,4 +73,9 @@
 
 .cost-item .value {
   color: #000;
+}
+
+.nice-form-group input[type="radio"] + label {
+  margin-right: 20px;
+  margin-bottom: 10px;
 }
